@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orfanatos | Happy</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <link rel="icon" href="/images/logo-icon.png">
+
+    <link rel="stylesheet" href="/css/cadastro-orfanato.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="orfanato-dexcricao">
+        <aside class="animate-right">
+            <img src="/images/map-marker.svg" alt="">
+
+            <footer>
+                <button onclick="history.back();">
+                    <img src="/images/arrow-back.svg" alt="Voltar">
+                </button>
+            </footer>
+        </aside>
+
+        <div class="corpo">
+            <main>
+
+
+                <form action="salvar_orfanato" method="POST">
+
+                    <fieldset>
+                        <legend>Dados</legend>
+
+                        <hr>
+
+                        <div class="map-container">
+                            <div id="mapid">
+                            </div>
+                            <input type="hidden" name="lat">
+                            <input type="hidden" name="lng">
+                            <footer>
+                                <a href="">Marque o local no mapa</a>
+                            </footer>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="name">Nome</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="sobre">Sobre <span>Máximo do 300 caracteres</span></label>
+                            <textarea type="text" name="sobre" id="sobre"></textarea>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="whats">Número de Whatsapp </label>
+                            <input type="text" name="whats" id="whats">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="fotos">Fotos</label>
+                            <div class="fotos-upload">
+                                <div id="images">
+                                    <div class="new-upload">
+                                        <input type="url" name="fotos" id="fotos" placeholder="Cole o link da foto aqui">
+                                        <span onclick="excluirFoto(this)">X</span>
+                                    </div>
+
+                                </div>
+                                <button type="button" class="criarbotao">+</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Visitação</legend>
+
+                        <hr>
+
+                        <div class="input-block">
+                            <label for="instrucoes">Instruções</label>
+                            <textarea type="text" name="instrucoes" id="instrucoes"></textarea>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="hora-visitas">Horário das visitas</label>
+                            <input type="text" name="hora-visitas" id="hora-visitas">
+                        </div>
+
+                        <div class="input-block">
+                            <label for="atende-fim-semana">Atende fim de semana?</label>
+                            <input type="hidden" name="atende-fim-semana" id="atende-fim-semana" value="1">
+
+                            <div class="fim-semana">
+                                <button type="button" class="active" value="1">Sim</button>
+                                <button type="button" value="0">Não</button>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+
+                    <button type="submit" class="confirmar">Confirmar</button>
+                </form>
+
+
+            </main>
+        </div>
+    </div>
+    <script src="/js/cadastro-orfanato.js"></script>
+</body>
+
+</html>

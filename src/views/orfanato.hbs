@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orfanatos | Happy</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <link rel="icon" href="/images/logo-icon.png">
+
+    <link rel="stylesheet" href="/css/orfanato.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="orfanato-dexcricao">
+        <aside class="animate-right">
+
+
+
+            <img src="/images/map-marker.svg" alt="">
+
+            <footer>
+                <button onclick="history.back();">
+                    <img src="/images/arrow-back.svg" alt="Voltar">
+                </button>
+            </footer>
+        </aside>
+
+        <div class="corpo">
+            <main>
+                <img src="{{result.firstImage}}" alt="" class="primeira-imagem">
+
+                <div class="imagens">
+                    {{#each result.fotos}}
+                    <img src="{{this}}" alt="">
+                    {{/each}}
+                </div>
+                <div class="orfanato-info">
+                    <h1>{{result.name}}</h1>
+                    <p>{{result.sobre}}</p>
+                </div>
+                <div class="map-container">
+                    <div id="mapid">
+                    </div>
+                    <span hidden class="lat">{{result.lat}}</span>
+                    <span hidden class="lng">{{result.lng}}</span>
+                    <footer>
+                        <a target="_blank" href="https://maps.google.com/mobile?q={{result.lat}},{{result.lng}}&z=15">Ver rotas no Google Maps</a>
+                    </footer>
+                </div>
+
+
+                <div class="linha">
+                    <hr>
+
+                    <h2>Instruções para visita</h2>
+                    <p>{{result.instrucoes}}</p>
+                </div>
+
+                <div class="open_details">
+                    <div class="hour">
+                        <img src="/images/clock.svg" alt="Horários">
+                        <p class="horario">{{result.hora_visitas}}</p>
+
+                    </div>
+                    <div class="atendimento">
+                        <img src="/images/info.svg" alt="Informações">
+                        <p class="horario">{{result.fimDeSemana}}</p>
+
+                    </div>
+                </div>
+                <div class="botao-contato">
+                    <a target="__blanck" class="contato" href="https://api.whatsapp.com/send?phone={{result.whats}}&text=Seja%20bem%20vindo!"><img src="/images/whatsapp.svg" alt="">
+                        <p>Entre em contato</p>
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="/js/orfanato.js"></script>
+</body>
+
+</html>

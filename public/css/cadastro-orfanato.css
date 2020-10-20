@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sans-serif';
+}
+
+ :root {
+    font-size: 62.5%;
+}
+
+.orfanato-dexcricao {
+    display: flex;
+    background-color: rgb(241, 238, 224);
+    height: 100%;
+}
+
+aside {
+    position: fixed;
+    background: #15C3D6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+}
+
+aside button {
+    background: #0e96a5;
+    cursor: pointer;
+    border-radius: .8rem;
+    padding: 1rem;
+    border: none;
+    transition: background-color .2s;
+}
+
+aside button:hover {
+    background: #15aebe;
+}
+
+main {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    background-color: white;
+    width: 70rem;
+    border: 1px solid #D3e2e5;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.corpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.input-block,
+.input-block label {
+    display: block;
+    font-style: normal;
+    font-weight: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #8FA7B3;
+}
+
+.input-block {
+    margin: 1.5rem;
+}
+
+.input-block input,
+.input-block textarea {
+    width: 55rem;
+    margin-top: .5rem;
+    background: #F5F8FA;
+    border: 1px solid #D3E2E5;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #5C8599;
+}
+
+.input-block input:valid,
+.input-block textarea:valid {
+    border: 1px solid #A1E9C5;
+}
+
+.input-block input {
+    height: 64px;
+}
+
+.input-block textarea {
+    line-height: 1.5rem;
+    resize: vertical;
+    height: 12rem;
+}
+
+.input-block label span {
+    margin-left: 3.2rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8FA7B3;
+}
+
+fieldset {
+    margin-top: 5rem;
+    border: none;
+}
+
+legend {
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.4rem;
+    font-style: normal;
+    font-weight: bold;
+    color: #4D6F80;
+}
+
+hr {
+    height: 1px;
+    background-color: #D3E2E5;
+    border: none;
+    margin: 2rem;
+    margin-left: 0rem;
+}
+
+.confirmar {
+    display: flex;
+    width: 50rem;
+    height: 6.4rem;
+    align-items: center;
+    justify-content: center;
+    background: #3CDC8C;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    margin: 7rem 0;
+    cursor: pointer;
+    transition: background-color .2s;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+}
+
+.confirmar:hover {
+    background: #5ae09d;
+}
+
+.map-container {
+    margin-bottom: 4rem;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+#mapid {
+    width: 80%;
+    height: 100%;
+    background: #e6f7fb;
+    border: 1px solid #b3dae2;
+    border-radius: 1rem;
+    z-index: 5;
+}
+
+.map-container footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: rgb(240, 241, 241);
+    width: 80%;
+    border-radius: 1rem;
+    margin-top: -1rem;
+}
+
+.map-container footer a {
+    color: rgb(15, 117, 117);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.fotos-upload button {
+    display: block;
+    width: 100%;
+    margin-top: 1.2rem;
+    background: #F5F8FA;
+    border: 1px dashed #96D2F0;
+    border-radius: 2rem;
+    height: 6.4rem;
+    color: #15B6D6;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fotos-upload input::placeholder {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #8FA7B3;
+}
+
+.fim-semana {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.fim-semana button {
+    height: 6.4rem;
+    padding: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 26px;
+    color: #5C8599;
+    border: 1px solid #D3e2e5;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.fim-semana button.active {
+    color: #37C77F;
+    background: #EDFFF6;
+    border: 1px solid #A1E9C5;
+}
+
+.fim-semana button:first-child {
+    border-radius: 2rem 0 0 2rem;
+}
+
+.fim-semana button+button {
+    border-radius: 0 2rem 2rem 0;
+}
+
+.fotos-upload span {
+    font-family: 'arial';
+    background: #FFFFFF;
+    border: 1px solid #D3E2E5;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FF669D;
+    padding: .5rem 1rem;
+    transition: border .2s;
+}
+
+.fotos-upload span:hover {
+    border: 1px solid #FF669D;
+}
+
+.new-upload {
+    position: relative;
+}
+
+.new-upload span {
+    position: absolute;
+    right: 12px;
+    bottom: 15px;
+}
